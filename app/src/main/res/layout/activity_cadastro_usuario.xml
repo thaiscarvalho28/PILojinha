@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.CadastroUsuario"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageContato"
+            android:layout_width="99dp"
+            android:layout_height="98dp"
+            android:src="@android:drawable/ic_menu_my_calendar" />
+
+        <EditText
+            android:id="@+id/textNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:hint="Nome completo"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="133dp" />
+
+        <EditText
+            android:id="@+id/textEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="196dp" />
+
+        <EditText
+            android:id="@+id/textSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="266dp" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Cadastrar"
+            android:onClick="btnCadastrar"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="334dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

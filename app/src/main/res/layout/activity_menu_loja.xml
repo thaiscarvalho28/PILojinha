@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.MenuLoja"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/viewAcesso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Configurações"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPerfil"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="?android:attr/colorPrimary"
+                android:onClick="btnPerfil"
+                android:text="Perfil"
+                android:textColor="@android:color/white"
+                tools:layout_editor_absoluteX="57dp"
+                tools:layout_editor_absoluteY="66dp" />
+
+            <Button
+                android:id="@+id/btnCarrinho"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="?android:attr/colorEdgeEffect"
+                android:onClick="btnCarrinho"
+                android:text="Carrinho"
+                android:textColor="@android:color/white"
+                tools:layout_editor_absoluteX="207dp"
+                tools:layout_editor_absoluteY="66dp" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/viewCategorias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Categorias"
+            android:textColor="@android:color/black"
+            android:textSize="30dp" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnCategMasculino"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="5dp"
+                    android:background="?android:attr/colorEdgeEffect"
+                    android:onClick="btnCategMasculino"
+                    android:text="Masculino"
+                    android:textColor="@android:color/white"
+                    tools:layout_editor_absoluteX="57dp"
+                    tools:layout_editor_absoluteY="208dp" />
+
+                <Button
+                    android:id="@+id/btnCategFeminino"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="5dp"
+                    android:background="?android:attr/colorEdgeEffect"
+                    android:onClick="btnCategFeminino"
+                    android:text="Feminino"
+                    android:textColor="@android:color/white"
+                    tools:layout_editor_absoluteX="207dp"
+                    tools:layout_editor_absoluteY="212dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnCategInfaMasc"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="5dp"
+                    android:background="?android:attr/colorEdgeEffect"
+                    android:onClick="btnCategInfaMasc"
+                    android:text="Infantil Masculino"
+                    android:textColor="@android:color/white"
+                    tools:layout_editor_absoluteX="57dp"
+                    tools:layout_editor_absoluteY="342dp" />
+
+                <Button
+                    android:id="@+id/btnCategInfaFeme"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="5dp"
+                    android:background="?android:attr/colorEdgeEffect"
+                    android:onClick="btnCategIntanFeme"
+                    android:text="Infantil Feminino"
+                    android:textColor="@android:color/white" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
