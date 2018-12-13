@@ -9,9 +9,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <Button
+            android:id="@+id/btnSairConta"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:text="Sair"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="85dp">
 
         <TextView
             android:id="@+id/viewAcesso"
@@ -91,33 +110,6 @@
                     android:textColor="@android:color/white"
                     tools:layout_editor_absoluteX="207dp"
                     tools:layout_editor_absoluteY="212dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/btnCategInfaMasc"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="5dp"
-                    android:background="?android:attr/colorEdgeEffect"
-                    android:onClick="btnCategInfaMasc"
-                    android:text="Infantil Masculino"
-                    android:textColor="@android:color/white"
-                    tools:layout_editor_absoluteX="57dp"
-                    tools:layout_editor_absoluteY="342dp" />
-
-                <Button
-                    android:id="@+id/btnCategInfaFeme"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
-                    android:layout_margin="5dp"
-                    android:background="?android:attr/colorEdgeEffect"
-                    android:onClick="btnCategIntanFeme"
-                    android:text="Infantil Feminino"
-                    android:textColor="@android:color/white" />
             </TableRow>
 
         </TableLayout>

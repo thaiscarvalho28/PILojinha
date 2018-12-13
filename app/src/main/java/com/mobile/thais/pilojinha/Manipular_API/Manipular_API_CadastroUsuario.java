@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import com.mobile.thais.pilojinha.Model.Cliente;
 import com.mobile.thais.pilojinha.View.CadastroUsuario;
-import com.mobile.thais.pilojinha.View.MainActivity;
+import com.mobile.thais.pilojinha.View.Login;
 
 import org.json.JSONObject;
 
@@ -20,7 +20,6 @@ import java.net.URL;
 public class Manipular_API_CadastroUsuario extends AsyncTask<String, Void, Integer>{
 
     private String URL_API = URLconfig.URL_API;
-    private Cliente cliente;
 
     public void request(String URL, String metodo, JSONObject JSON){
         this.execute(URL, metodo, JSON.toString());
@@ -71,7 +70,7 @@ public class Manipular_API_CadastroUsuario extends AsyncTask<String, Void, Integ
             Toast.makeText(CadastroUsuario.context,
                     "Usuário cadastrado com sucesso!",
                     Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(CadastroUsuario.context, MainActivity.class);
+            Intent intent = new Intent(CadastroUsuario.context, Login.class);
             CadastroUsuario.context.startActivity(intent);
 
         } else {

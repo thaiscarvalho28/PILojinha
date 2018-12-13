@@ -32,7 +32,6 @@ public class CadastroUsuario extends AppCompatActivity{
         textSenha = findViewById(R.id.textSenha);
         btnCadastrar = findViewById(R.id.btnCadastrar);
 
-
     }
 
     public void btnCadastrar(View v){

@@ -3,7 +3,7 @@ package com.mobile.thais.pilojinha.Manipular_API;
 import android.content.Intent;
 import android.os.AsyncTask;
 
-import com.mobile.thais.pilojinha.View.MainActivity;
+import com.mobile.thais.pilojinha.View.Login;
 import com.mobile.thais.pilojinha.View.MenuLoja;
 
 import java.io.IOException;
@@ -56,8 +56,8 @@ public class Verifica_Token extends AsyncTask<String, Void, Integer> {
     protected void onPostExecute(Integer code) {
 
         if (code.equals(200)) {
-            Intent intent = new Intent(MainActivity.context, MenuLoja.class);
-            MainActivity.context.startActivity(intent);
+            Intent intent = new Intent(Login.context, MenuLoja.class);
+            Login.context.startActivity(intent);
         } else {
             return;
         }

@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.mobile.thais.pilojinha.Manipular_API.Manipular_API_Login;
 import com.mobile.thais.pilojinha.Manipular_API.Verifica_Token;
@@ -17,27 +17,28 @@ import com.mobile.thais.pilojinha.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     EditText EmailLogin;
     EditText SenhaLogin;
-    TextView ErrorLogin;
+    Button btnLogar;
+    Button btnCadastrar;
 
     public static Context context;
     public static Activity fa;
-
-    public String email;
-    public String senha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         verificar_autenticacao();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+        this.context = getApplicationContext();
+        fa = this;
 
         EmailLogin = findViewById(R.id.textEmailLogin);
         SenhaLogin = findViewById(R.id.textSenhaLogin);
-        ErrorLogin = findViewById(R.id.viewErroLogin);
+        btnLogar = findViewById(R.id.btnEntrar);
+        btnCadastrar = findViewById(R.id.btnCadastrar);
     }
 
     private void verificar_autenticacao() {
@@ -48,21 +49,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnLogar(View view) {
-        email = String.valueOf(EmailLogin.getText().toString());
-        senha = String.valueOf(SenhaLogin.getText().toString());
 
-        JSONObject cliJson = new JSONObject();
+        JSONObject clienteJson = new JSONObject();
         Manipular_API_Login request = new Manipular_API_Login();
 
         try {
 
-            cliJson.put("senha", senha);
-            cliJson.put("email", email);
+            clienteJson.put("email", EmailLogin.getText().toString());
+            clienteJson.put("senha", SenhaLogin.getText().toString());
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        request.request("cliente/login", "POST", cliJson);
+        request.request("cliente/autenticar", "POST", clienteJson);
 
     }
 
