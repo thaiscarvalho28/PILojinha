@@ -58,10 +58,11 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/imgPesquisa"
-                    android:layout_width="match_parent"
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/ic_menu_search" />
+                    android:adjustViewBounds="false"
+                    app:srcCompat="?android:attr/actionModeFindDrawable" />
 
                 <Spinner
                     android:id="@+id/spinnerCategoria"

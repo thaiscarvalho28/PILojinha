@@ -51,7 +51,7 @@ public class ActivAlertDialog extends Dialog implements View.OnClickListener {
         menos.setOnClickListener(this);
         continuar.setOnClickListener(this);
 
-        continuar.setText(String.valueOf(item.getQuantidade()));
+        //continuar.setText(String.valueOf(item.getQuantidade()));
         qtd = item.getQuantidade();
 
         buscaCarrinho = new Buscar_Carrinho(activity, ActivLoja.txt_valor);
