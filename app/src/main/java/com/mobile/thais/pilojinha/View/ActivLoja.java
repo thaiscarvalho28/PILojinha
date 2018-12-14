@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.mobile.thais.pilojinha.Manipular_API.Buscar_Carrinho;
 import com.mobile.thais.pilojinha.Manipular_API.Buscar_Categorias;
-import com.mobile.thais.pilojinha.Manipular_API.Buscar_produtos;
+import com.mobile.thais.pilojinha.Manipular_API.Buscar_Produtos;
 import com.mobile.thais.pilojinha.Model.Categoria;
 import com.mobile.thais.pilojinha.Model.ItemCarrinho;
 import com.mobile.thais.pilojinha.Model.Produto;
@@ -64,7 +64,7 @@ public class ActivLoja extends AppCompatActivity implements View.OnClickListener
         mListView = findViewById(R.id.listaProdutos);
         spinner = findViewById(R.id.spinnerCategoria);
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listCategoria);
+        adapter = new ArrayAdapter<Categoria>(this, android.R.layout.simple_spinner_item, listCategoria);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
@@ -74,12 +74,12 @@ public class ActivLoja extends AppCompatActivity implements View.OnClickListener
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 Categoria categoria = (Categoria) parent.getSelectedItem();
-                displaySelectedCategory(categoria);
 
-                Buscar_produtos buscarProdutos = new Buscar_produtos();
-                buscarProdutos.request("categoria/{id}" + categoria.getId(), "GET");
+                Buscar_Produtos buscarProdutos = new Buscar_Produtos();
+                buscarProdutos.request("categoria/" + categoria.getId(), "GET");
 
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -103,7 +103,7 @@ public class ActivLoja extends AppCompatActivity implements View.OnClickListener
             }
         });
 
-        upDate_view();
+       // upDate_view();
     }
 
     @Override
@@ -112,24 +112,13 @@ public class ActivLoja extends AppCompatActivity implements View.OnClickListener
 
         if (spinner.getSelectedItem() == null) {
             Buscar_Categorias buscarCategorias = new Buscar_Categorias();
-            buscarCategorias.request("categoria/{id}", "GET"); //categoriainfo
+            buscarCategorias.request("categoria", "GET"); //categoriainfo
         }
     }
 
-    public void displaySelectedCategory(Categoria categoria) {
-
-        int id = categoria.getId();
-        String nome = categoria.getNome();
-
-        String cat_info = "ID: " + id + "\n" + "Nome: " + nome;
-
-        Toast.makeText(this, cat_info, Toast.LENGTH_LONG).show();
-
-
-    }
 
     public void upDate_view() {
-        buscaCarrinho.request("/auth/carrinho", "GET", session.token());
+        buscaCarrinho.request("auth/carrinho", "GET", session.token());
     }
 
 

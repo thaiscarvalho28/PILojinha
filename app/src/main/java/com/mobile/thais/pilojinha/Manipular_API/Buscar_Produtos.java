@@ -3,6 +3,7 @@ package com.mobile.thais.pilojinha.Manipular_API;
 import android.os.AsyncTask;
 
 import com.google.gson.Gson;
+import com.mobile.thais.pilojinha.Model.Categoria;
 import com.mobile.thais.pilojinha.Model.Produto;
 import com.mobile.thais.pilojinha.R;
 import com.mobile.thais.pilojinha.View.ActivListaProdutosAdapter;
@@ -19,13 +20,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Buscar_produtos extends AsyncTask<String, Void, String> {
+public class Buscar_Produtos extends AsyncTask<String, Void, String> {
 
     private String URL_API = URLconfig.URL_API;
     int statusCode = 0;
     ActivLoja activLoja = new ActivLoja();
 
     List<Produto> listProdutos = new ArrayList<>();
+    List<Categoria> listCategoria = new ArrayList<>();
+
 
     public void request(String url, String method) {
         this.execute(url, method);
@@ -57,11 +60,15 @@ public class Buscar_produtos extends AsyncTask<String, Void, String> {
             res_body = response.toString();
 
             Gson gson = new Gson();
-            Produto[] produto_array = gson.fromJson(res_body, Produto[].class);
+            Categoria categorias = gson.fromJson(res_body, Categoria.class);
 
-            for (int i = 0; i < produto_array.length; i++) {
-                listProdutos.add(produto_array[i]);
+            for (int i = 0; i < categorias.getProdutos().size(); i++) {
+                listProdutos.add(categorias.getProdutos().get(i));
             }
+
+            /*for (int i = 0; i < produto_array.length; i++) {
+                listProdutos.add(produto_array[i]);
+            }*/
 
 
         } catch (MalformedURLException e) {

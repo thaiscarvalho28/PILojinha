@@ -54,8 +54,11 @@ public class ActivListaProdutosAdapter extends ArrayAdapter<Produto> {
         //Obtem as informações de pessoas
         String nome = getItem(position).getNome();
         double preco = getItem(position).getPreco();
-        double qtd = getItem(position).getQnt();
-        String imgUrl = URLconfig.URL_API + "/admin/addimgprod/{id}" + getItem(position).getImagens().get(0).getIdImg().toString();
+        double qtd = getItem(position).getQuantidade();
+        String imgUrl = "";
+        if (getItem(position).getImagens().size() != 0){
+            imgUrl = URLconfig.URL_API + "/img/" + getItem(position).getImagens().get(0).getIdImg().toString();
+        }
 
 
         //Cria o resultado da view para mostrar a animação

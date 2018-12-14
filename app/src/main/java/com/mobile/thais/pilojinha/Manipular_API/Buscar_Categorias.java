@@ -44,7 +44,7 @@ public class Buscar_Categorias extends AsyncTask<String, Void, String> {
             httpURLConnection.setRequestProperty("Content-Type", "application/json");
             httpURLConnection.setDoInput(true);
 
-            statusCode = httpURLConnection.getResponseCode(); //statusCode = 400
+            statusCode = httpURLConnection.getResponseCode();
 
             BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
             String inputLine;

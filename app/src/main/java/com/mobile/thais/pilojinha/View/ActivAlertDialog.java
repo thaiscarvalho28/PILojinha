@@ -63,7 +63,7 @@ public class ActivAlertDialog extends Dialog implements View.OnClickListener {
 
         if (v.getId() == R.id.btnMais) {
             qtd = qtd + 1;
-            if (qtd > prod.getQnt()) {
+            if (qtd > prod.getQuantidade()) {
                 qtd--;
                 Toast.makeText(activity, "Quantidade de produto insuficiente no estoque!", Toast.LENGTH_LONG).show();
             } else {

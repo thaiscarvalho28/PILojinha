@@ -1,19 +1,18 @@
 package com.mobile.thais.pilojinha.Model;
 
+import java.util.List;
+
 public class Categoria {
-    int id;
-    String nome;
+    private Long id;
+    private String nome;
+    private List<Produto> produtos;
 
-    public Categoria(int id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -23,6 +22,14 @@ public class Categoria {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 
 

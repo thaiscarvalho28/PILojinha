@@ -5,7 +5,7 @@ import java.util.List;
 public class Produto {
     private Long id;
     private String nome;
-    private double custo, preco, qnt;
+    private double custo, preco, quantidade;
     private List<Imagens> imagens;
     private List<Categoria> categoria;
 
@@ -43,12 +43,12 @@ public class Produto {
         this.preco = preco;
     }
 
-    public double getQnt() {
-        return qnt;
+    public double getQuantidade() {
+        return quantidade;
     }
 
-    public void setQnt(double qnt) {
-        this.qnt = qnt;
+    public void setQuantidade(double quantidade) {
+        this.quantidade = quantidade;
     }
 
     public List<Imagens> getImagens() {
