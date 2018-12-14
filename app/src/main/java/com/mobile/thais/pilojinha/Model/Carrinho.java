@@ -4,35 +4,19 @@ import java.util.Date;
 import java.util.List;
 
 public class Carrinho {
-    private Long id_Carrinho;
-    private List<ItemCarrinho> itensCarrinho;
-    private Date expireTime;
+    private Long id;
     private Cliente cliente;
-    private double valor_total;
+    private List<ItemCarrinho> itens;
+    private Date expTime;
 
-    public Long getId_Carrinho() {
-        return id_Carrinho;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_Carrinho(Long id_Carrinho) {
-        this.id_Carrinho = id_Carrinho;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public List<ItemCarrinho> getItensCarrinho() {
-        return itensCarrinho;
-    }
-
-    public void setItensCarrinho(List<ItemCarrinho> itensCarrinho) {
-        this.itensCarrinho = itensCarrinho;
-    }
-
-    public Date getExpireTime() {
-        return expireTime;
-    }
-
-    public void setExpireTime(Date expireTime) {
-        this.expireTime = expireTime;
-    }
 
     public Cliente getCliente() {
         return cliente;
@@ -42,11 +26,19 @@ public class Carrinho {
         this.cliente = cliente;
     }
 
-    public double getValor_total() {
-        return valor_total;
+    public Date getExpTime() {
+        return expTime;
     }
 
-    public void setValor_total(double valor_total) {
-        this.valor_total = valor_total;
+    public void setExpTime(Date expTime) {
+        this.expTime = expTime;
+    }
+
+    public List<ItemCarrinho> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemCarrinho> itens) {
+        this.itens = itens;
     }
 }

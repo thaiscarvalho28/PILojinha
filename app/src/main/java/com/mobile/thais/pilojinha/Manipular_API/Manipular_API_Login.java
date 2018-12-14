@@ -5,8 +5,8 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.mobile.thais.pilojinha.Model.Session;
-import com.mobile.thais.pilojinha.View.Login;
-import com.mobile.thais.pilojinha.View.MenuLoja;
+import com.mobile.thais.pilojinha.View.ActivLogin;
+import com.mobile.thais.pilojinha.View.ActivMenuLoja;
 
 import org.json.JSONObject;
 
@@ -45,7 +45,7 @@ public class Manipular_API_Login extends AsyncTask<String, Void, String> {
             wr.flush();
             wr.close();
 
-            statusCode = httpURLConnection.getResponseCode(); //cliente/Login -> Recebendo = 405; cliente/autenticar -> Recebendo = 500
+            statusCode = httpURLConnection.getResponseCode(); //cliente/ActivLogin -> Recebendo = 405; cliente/autenticar -> Recebendo = 500
             autenticacao = httpURLConnection.getHeaderField("Authorization");
 
 
@@ -69,14 +69,14 @@ public class Manipular_API_Login extends AsyncTask<String, Void, String> {
 
         if (statusCode == 200) {
 
-            Session session = new Session(Login.context);
+            Session session = new Session(ActivLogin.context);
             session.setToken(token);
 
-            Intent intent = new Intent(Login.context, MenuLoja.class);
-            Login.context.startActivity(intent);
+            Intent intent = new Intent(ActivLogin.context, ActivMenuLoja.class);
+            ActivLogin.context.startActivity(intent);
 
         } else {
-            Toast.makeText(Login.context,
+            Toast.makeText(ActivLogin.context,
                     "Erro ao logar! Verifique os dados e tente Novamente!",
                     Toast.LENGTH_LONG).show();
         }

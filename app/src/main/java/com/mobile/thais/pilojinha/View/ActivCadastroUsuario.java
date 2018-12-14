@@ -13,7 +13,7 @@ import com.mobile.thais.pilojinha.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CadastroUsuario extends AppCompatActivity{
+public class ActivCadastroUsuario extends AppCompatActivity{
 
     EditText textNome;
     EditText textEmail;

@@ -1,12 +1,16 @@
 package com.mobile.thais.pilojinha.Manipular_API;
 
+import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.mobile.thais.pilojinha.Model.Carrinho;
+import com.mobile.thais.pilojinha.Model.ItemCarrinho;
 import com.mobile.thais.pilojinha.Model.Produto;
 import com.mobile.thais.pilojinha.R;
-import com.mobile.thais.pilojinha.View.ActivListaProdutosAdapter;
-import com.mobile.thais.pilojinha.View.ActivLoja;
+import com.mobile.thais.pilojinha.View.ActivCarrinho;
+import com.mobile.thais.pilojinha.View.ActivListaCarrinhoAdapter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,22 +22,30 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class Buscar_produtos extends AsyncTask<String, Void, String> {
-
+public class Mostrar_Carrinho extends AsyncTask<String, Void, String> {
     private String URL_API = URLconfig.URL_API;
     int statusCode = 0;
-    ActivLoja activLoja = new ActivLoja();
-
+    ActivCarrinho activCarrinho = new ActivCarrinho();
+    List<ItemCarrinho> listItemCarrinho = new ArrayList<>();
     List<Produto> listProdutos = new ArrayList<>();
+    Context context;
+    TextView textView;
 
-    public void request(String url, String method) {
-        this.execute(url, method);
+
+    public Mostrar_Carrinho(Context context, TextView textView) {
+        this.context = context;
+        this.textView = textView;
+    }
+
+
+    public void request(String url, String method, String token) {
+        this.execute(url, method, token);
     }
 
 
     @Override
     protected String doInBackground(String... param) {
+
 
         String res_body = null;
         HttpURLConnection httpURLConnection = null;
@@ -44,6 +56,7 @@ public class Buscar_produtos extends AsyncTask<String, Void, String> {
             httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(param[1]);
             httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            httpURLConnection.setRequestProperty("Authorization", param[2]);
             httpURLConnection.setDoInput(true);
 
             statusCode = httpURLConnection.getResponseCode();
@@ -57,11 +70,9 @@ public class Buscar_produtos extends AsyncTask<String, Void, String> {
             res_body = response.toString();
 
             Gson gson = new Gson();
-            Produto[] produto_array = gson.fromJson(res_body, Produto[].class);
+            Carrinho cat_array = gson.fromJson(res_body, Carrinho.class);
 
-            for (int i = 0; i < produto_array.length; i++) {
-                listProdutos.add(produto_array[i]);
-            }
+            listItemCarrinho = cat_array.getItens();
 
 
         } catch (MalformedURLException e) {
@@ -77,15 +88,20 @@ public class Buscar_produtos extends AsyncTask<String, Void, String> {
         }
 
         return null;
-
     }
 
+
     @Override
-    protected void onPostExecute(String categorias) {
+    protected void onPostExecute(String carrinho) {
 
-        activLoja.listProdutos.addAll(listProdutos);
+        activCarrinho.listItemCarrinho.addAll(listItemCarrinho);
 
-        ActivListaProdutosAdapter adapter = new ActivListaProdutosAdapter(activLoja.context, R.layout.activity_lista_produtos_adapter, listProdutos);
-        activLoja.mListView.setAdapter(adapter);
+        for (int i = 0; i<listItemCarrinho.size(); i++){
+            listProdutos.add(listItemCarrinho.get(i).getProduto());
+        }
+
+        ActivListaCarrinhoAdapter adapterCarrinho = new ActivListaCarrinhoAdapter(context, R.layout.activity_lista_carrinho_adapter, listItemCarrinho);
+        activCarrinho.mListView.setAdapter(adapterCarrinho);
+
     }
 }

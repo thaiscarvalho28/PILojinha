@@ -2,52 +2,53 @@ package com.mobile.thais.pilojinha.Model;
 
 import java.util.List;
 
-class Produto {
-    private Long id_produto;
-    private String nome_produto;
-    private double preco_produto;
-    private double custo_produto;
-    private int quantidade_estoque;
+public class Produto {
+    private Long id;
+    private String nome;
+    private double custo, preco, qnt;
     private List<Imagens> imagens;
+    private List<Categoria> categoria;
 
-    public Long getId_produto() {
-        return id_produto;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setId_produto(Long id_produto) {
-        this.id_produto = id_produto;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNome_produto() {
-        return nome_produto;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNome_produto(String nome_produto) {
-        this.nome_produto = nome_produto;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public double getPreco_produto() {
-        return preco_produto;
+
+    public double getCusto() {
+        return custo;
     }
 
-    public void setPreco_produto(double preco_produto) {
-        this.preco_produto = preco_produto;
+    public void setCusto(double custo) {
+        this.custo = custo;
     }
 
-    public double getCusto_produto() {
-        return custo_produto;
+    public double getPreco() {
+        return preco;
     }
 
-    public void setCusto_produto(double custo_produto) {
-        this.custo_produto = custo_produto;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
-    public int getQuantidade_estoque() {
-        return quantidade_estoque;
+    public double getQnt() {
+        return qnt;
     }
 
-    public void setQuantidade_estoque(int quantidade_estoque) {
-        this.quantidade_estoque = quantidade_estoque;
+    public void setQnt(double qnt) {
+        this.qnt = qnt;
     }
 
     public List<Imagens> getImagens() {
@@ -57,4 +58,13 @@ class Produto {
     public void setImagens(List<Imagens> imagens) {
         this.imagens = imagens;
     }
+
+    public List<Categoria> getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(List<Categoria> categoria) {
+        this.categoria = categoria;
+    }
 }
+

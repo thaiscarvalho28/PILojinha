@@ -4,9 +4,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.mobile.thais.pilojinha.Model.Cliente;
-import com.mobile.thais.pilojinha.View.CadastroUsuario;
-import com.mobile.thais.pilojinha.View.Login;
+import com.mobile.thais.pilojinha.View.ActivCadastroUsuario;
+import com.mobile.thais.pilojinha.View.ActivLogin;
 
 import org.json.JSONObject;
 
@@ -67,15 +66,15 @@ public class Manipular_API_CadastroUsuario extends AsyncTask<String, Void, Integ
     protected void onPostExecute(Integer code) {
 
         if(code.equals(201)){
-            Toast.makeText(CadastroUsuario.context,
+            Toast.makeText(ActivCadastroUsuario.context,
                     "Usuário cadastrado com sucesso!",
                     Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(CadastroUsuario.context, Login.class);
-            CadastroUsuario.context.startActivity(intent);
+            Intent intent = new Intent(ActivCadastroUsuario.context, ActivLogin.class);
+            ActivCadastroUsuario.context.startActivity(intent);
 
         } else {
 
-            Toast.makeText(CadastroUsuario.context,
+            Toast.makeText(ActivCadastroUsuario.context,
                     "Erro ao cadastrar. Tente novamente!",
                     Toast.LENGTH_LONG).show();
         }

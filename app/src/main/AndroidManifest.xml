@@ -11,21 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Login">
+        <activity android:name=".View.ActivLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.CadastroUsuario" />
-        <activity android:name=".View.MenuLoja" />
-        <activity android:name=".View.Carrinho" />
-        <activity android:name=".View.CategoriaFeminino" />
-        <activity android:name=".View.CategoriaInfantilMasc" />
-        <activity android:name=".View.CategoriaMasculino" />
-        <activity android:name=".View.PerfilUsuario" />
-        <activity android:name=".View.CategoriaInfantilFeme"></activity>
+        <activity android:name=".View.ActivCadastroUsuario" />
+        <activity android:name=".View.ActivMenuLoja" />
+        <activity android:name=".View.ActivCarrinho" />
+        <activity android:name=".View.ActivLoja" />
+        <activity android:name=".View.ActivPerfilUsuario" />
+        <activity android:name=".View.ActivAlertDialog" />
+        <activity android:name=".View.ActivListaProdutosAdapter"></activity>
     </application>
 
 </manifest>

@@ -1,18 +1,18 @@
 package com.mobile.thais.pilojinha.Model;
 
-class ItemCarrinho {
+public class ItemCarrinho {
     private Long id_item;
     private Produto produto;
-    private int quantidade;
-    private double valor; //quantidade X valor_do_produto
+    private double quantidade;
     private Carrinho carrinho;
 
-    public Long getId_item() {
+
+    public Long getId() {
         return id_item;
     }
 
-    public void setId_item(Long id_item) {
-        this.id_item = id_item;
+    public void setId(Long id) {
+        this.id_item = id;
     }
 
     public Produto getProduto() {
@@ -23,20 +23,12 @@ class ItemCarrinho {
         this.produto = produto;
     }
 
-    public int getQuantidade() {
+    public double getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
     }
 
     public Carrinho getCarrinho() {

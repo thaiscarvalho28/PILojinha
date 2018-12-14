@@ -1,24 +1,24 @@
 package com.mobile.thais.pilojinha.Model;
 
-class Imagens {
-    private Long id_img;
-    private String nome_img;
+public class Imagens {
+    private Long id;
+    private String patch;
     private Produto produto;
 
-    public Long getId_img() {
-        return id_img;
+    public Long getIdImg() {
+        return id;
     }
 
-    public void setId_img(Long id_img) {
-        this.id_img = id_img;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNome_img() {
-        return nome_img;
+    public String getPatch() {
+        return patch;
     }
 
-    public void setNome_img(String nome_img) {
-        this.nome_img = nome_img;
+    public void setPatch(String patch) {
+        this.patch = patch;
     }
 
     public Produto getProduto() {

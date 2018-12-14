@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.mobile.thais.pilojinha.R;
 
-public class CategoriaInfantilMasc extends AppCompatActivity {
+public class ActivPerfilUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categoria_infantil_masc);
+        setContentView(R.layout.activity_perfil_usuario);
     }
 }

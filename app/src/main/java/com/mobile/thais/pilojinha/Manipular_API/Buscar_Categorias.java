@@ -4,8 +4,7 @@ import android.os.AsyncTask;
 
 import com.google.gson.Gson;
 import com.mobile.thais.pilojinha.Model.Categoria;
-import com.mobile.thais.pilojinha.View.CategoriaFeminino;
-import com.mobile.thais.pilojinha.View.MenuLoja;
+import com.mobile.thais.pilojinha.View.ActivLoja;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,15 +16,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Buscar_categorias extends AsyncTask<String, Void, String> {
+public class Buscar_Categorias extends AsyncTask<String, Void, String> {
 
     private String URL_API = URLconfig.URL_API;
     int statusCode = 0;
 
-    MenuLoja menuLoja = new MenuLoja();
-    CategoriaFeminino catFeminino = new CategoriaFeminino();
-
-
+    ActivLoja activLoja = new ActivLoja();
     List<Categoria> listaCategorias = new ArrayList<>();
 
 
@@ -36,7 +32,6 @@ public class Buscar_categorias extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... param) {
-
 
         String res_body = null;
         HttpURLConnection httpURLConnection = null;
@@ -50,7 +45,6 @@ public class Buscar_categorias extends AsyncTask<String, Void, String> {
             httpURLConnection.setDoInput(true);
 
             statusCode = httpURLConnection.getResponseCode();
-
 
             BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
             String inputLine;
@@ -87,8 +81,8 @@ public class Buscar_categorias extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String categorias) {
 
-        //menuLoja.listCategoria.addAll(listaCategorias);
-        //menuLoja.adapter.notifyDataSetChanged();
+        activLoja.listCategoria.addAll(listaCategorias);
+        activLoja.adapter.notifyDataSetChanged();
     }
 
 }

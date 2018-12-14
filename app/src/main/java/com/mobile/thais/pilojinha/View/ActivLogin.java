@@ -17,7 +17,7 @@ import com.mobile.thais.pilojinha.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Login extends AppCompatActivity {
+public class ActivLogin extends AppCompatActivity {
 
     EditText EmailLogin;
     EditText SenhaLogin;
@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void btnCriarConta(View view) {
-        Intent intent = new Intent(this, CadastroUsuario.class);
+        Intent intent = new Intent(this, ActivCadastroUsuario.class);
         startActivity(intent);
     }
 }
