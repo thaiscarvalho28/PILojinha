@@ -52,7 +52,7 @@ public class ActivLoja extends AppCompatActivity implements View.OnClickListener
             ActivCarrinho.actvCarrinho.finish();
         }
 
-        btn_check_out = (Button) findViewById(R.id.btnCarrinho);
+        btn_check_out = findViewById(R.id.btnCarrinho);
         btn_check_out.setOnClickListener(this);
 
         this.context = getApplicationContext();
@@ -77,7 +77,7 @@ public class ActivLoja extends AppCompatActivity implements View.OnClickListener
                 displaySelectedCategory(categoria);
 
                 Buscar_produtos buscarProdutos = new Buscar_produtos();
-                buscarProdutos.request("categoria/" + categoria.getId(), "GET");
+                buscarProdutos.request("categoria/{id}" + categoria.getId(), "GET");
 
             }
 
@@ -129,7 +129,6 @@ public class ActivLoja extends AppCompatActivity implements View.OnClickListener
     }
 
     public void upDate_view() {
-
         buscaCarrinho.request("/auth/carrinho", "GET", session.token());
     }
 

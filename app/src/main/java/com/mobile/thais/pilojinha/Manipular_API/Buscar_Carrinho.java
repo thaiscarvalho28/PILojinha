@@ -56,7 +56,6 @@ public class Buscar_Carrinho extends AsyncTask<String, Void, String> {
 
             statusCode = httpURLConnection.getResponseCode();
 
-
             BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
@@ -69,7 +68,6 @@ public class Buscar_Carrinho extends AsyncTask<String, Void, String> {
             Carrinho cat_array = gson.fromJson(res_body, Carrinho.class);
 
             listItemCarrinho = cat_array.getItens();
-
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
